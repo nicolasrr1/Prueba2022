@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../public/css/style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <div class="conten">
+            <div class="card" style="width: 64rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+
+                    <!-- alert -->
+                    <div style="display:none" class="alert alert-secondary"
+                        id="error" role="alert">
+                        A simple secondary alert—check it out!
+                    </div>
+                    <!-- endalert -->
+
+                    <form method="post" name="formulario" id="formulario">
+
+
+                        <div class="mb-3">
+                            <label for="gce_nombre_equipo" class="form-label">Nombre
+                                del equipo</label>
+                            <input type="text" class="form-control"
+                                id="gce_nombre_equipo"
+                                name="gce_nombre_equipo">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_board" class="form-label">Tipo de
+                                placa base</label>
+                            <input type="text" class="form-control"
+                                id="gce_board"
+                                name="gce_board">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_procesador" class="form-label">Marca
+                                del procesador</label>
+                            <input type="text" class="form-control"
+                                id="gce_procesador"
+                                name="gce_procesador">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_grafica" class="form-label">Marca de
+                                la trajeta gráfica</label>
+                            <input type="text" class="form-control"
+                                id="gce_grafica"
+                                name="gce_grafica">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_case" class="form-label">Modelo de
+                                la torre</label>
+                            <input type="text" class="form-control"
+                                id="gce_case"
+                                name="gce_case">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_procesador" class="form-label">Marca
+                                del procesador</label>
+                            <input type="text" class="form-control"
+                                id="gce_procesador"
+                                name="gce_procesador">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_grafica" class="form-label">Marca de
+                                la trajeta gráfica</label>
+                            <input type="text" class="form-control"
+                                id="gce_grafica"
+                                name="gce_grafica">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_ram" class="form-label">Tamaño total
+                                de ram</label>
+                            <input type="text" class="form-control"
+                                id="gce_ram"
+                                name="gce_ram">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_disco_duro" class="form-label">Modelo
+                                del disco duro</label>
+                            <input type="text" class="form-control"
+                                id="gce_disco_duro"
+                                name="gce_disco_duro">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_teclado" class="form-label">Tipo de
+                                teclado</label>
+                            <input type="text" class="form-control"
+                                id="gce_teclado"
+                                name="gce_teclado">
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="gce_mouse" class="form-label">Tipo de
+                                mouse</label>
+                            <input type="text" class="form-control"
+                                id="gce_mouse"
+                                name="gce_mouse">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gce_pantalla" class="form-label">Tamaño
+                                total de la pantalla</label>
+                            <input type="text" class="form-control"
+                                id="gce_pantalla"
+                                name="gce_pantalla">
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary"
+                            id="liveToastBtn">Show live toast</button>
+
+                        <button type="button" id="uploadUser" class="btn
+                            btn-success">Cargar
+                            usuario</button>
+
+                        <div class="position-fixed bottom-0 end-0 p-3"
+                            style="z-index: 11">
+                            <div id="liveToast" class="toast align-items-center
+                                text-white
+                                bg-primary border-0" role="alert"
+                                aria-live="assertive" aria-atomic="true">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+
+                                    </div>
+                                    <button type="button" class="btn-close
+                                        btn-close-white me-2 m-auto"
+                                        data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div id="tableall">
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+            var toastTrigger = document.getElementById("liveToastBtn");
+            var toastLiveExample = document.getElementById("liveToast");
+            if (toastTrigger) {
+              toastTrigger.addEventListener("click", function () {
+                var toast = new bootstrap.Toast(toastLiveExample);
+            
+                toast.show();
+              });
+            
+              $(document).ready(function () {
+                $("#formulario").submit(function (e) {
+                  e.preventDefault();
+                  document.getElementById("liveToastBtn").disabled = true;
+                  $.ajax({
+                    type: "POST",
+                    url: "http://localhost/Prueba2022/Controller/CrearCaracteristicas.php",
+                    headers: { Authorization: "Bearer xxxxxxxxxxxxx" },
+                    data: $(this).serialize(),
+                    success: function (response) {
+                      data = JSON.parse(response);
+                      if (data.error) {
+                        $(".toast-body").html("todo los datos son necesarios ");
+                      } else {
+                        $(".toast-body").html("los datos fueron almacenados");
+                        $("#gce_nombre_equipo").val("");
+                        $("#gce_board").val("");
+                        $("#gce_case").val("");
+                        $("#gce_procesador").val("");
+                        $("#gce_grafica").val("");
+                        $("#gce_ram").val("");
+                        $("#gce_disco_duro").val("");
+                        $("#gce_teclado").val("");
+                        $("#gce_mouse").val("");
+                        $("#gce_pantalla").val("");
+                        $("#estado").val("");
+                        listar();
+                      }
+                      document.getElementById("liveToastBtn").disabled = false;
+                    },
+                    error: function (error) {
+                      console.log(e.message);
+                    },
+                  });
+                });
+              });
+            }
+            
+            listar();
+            function listar() {
+              $.ajax({
+                data: {},
+                url: "http://localhost/Prueba2022/Controller/ListarCaracteristicas.php",
+                success: function (response) {
+                  console.log(response.toString());
+                  $("#tableall").html(response);
+                },
+                error: function (response, status, error) {
+                  alert("error");
+                },
+              });
+            }
+            
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+            integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
