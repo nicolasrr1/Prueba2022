@@ -1,0 +1,179 @@
+<p>home works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <div class="conten">
+            <div class="card" style="width: 64rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+
+                    <!-- alert -->
+                    <div style="display:none" class="alert alert-secondary"
+                        id="error" role="alert">
+                        A simple secondary alert—check it out!
+                    </div>
+                    <!-- endalert -->
+
+                    <form #caracteristicas="ngForm"
+                        (ngSubmit)="onCaracteristicas(caracteristicas.value)">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre
+                                del equipo</label>
+                            <input type="text" class="form-control"
+                                id="name"
+                                name="name" ngModel>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="board" class="form-label">Tipo de
+                                placa base</label>
+                            <input type="text" class="form-control"
+                                id="board"
+                                name="board" ngModel>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="case" class="form-label">Modelo de
+                                la torre</label>
+                            <input type="text" class="form-control"
+                                id="case"
+                                name="case" ngModel>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="procesador" class="form-label">Marca
+                                del procesador</label>
+                            <input type="text" class="form-control"
+                                id="procesador"
+                                name="procesador" ngModel>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="grafica" class="form-label">Marca de
+                                la trajeta gráfica</label>
+                            <input type="text" class="form-control"
+                                id="grafica"
+                                name="grafica" ngModel>
+                        </div>
+
+
+
+                        <div class="mb-3">
+                            <label for="ram" class="form-label">Tamaño total
+                                de ram</label>
+                            <input type="text" class="form-control"
+                                id="ram"
+                                name="ram" ngModel>
+                        </div>
+                        <div class="mb-3">
+                            <label for="disco" class="form-label">Modelo
+                                del disco duro</label>
+                            <input type="text" class="form-control"
+                                id="disco"
+                                name="disco" ngModel>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="teclado" class="form-label">Tipo de
+                                teclado</label>
+                            <input type="text" class="form-control"
+                                id="teclado"
+                                name="teclado" ngModel>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="mouse" class="form-label">Tipo de
+                                mouse</label>
+                            <input type="text" class="form-control"
+                                id="mouse"
+                                name="mouse" ngModel>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="pantalla" class="form-label">Tamaño
+                                total de la pantalla</label>
+                            <input type="text" class="form-control"
+                                id="pantalla"
+                                name="pantalla" ngModel>
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <input type="hidden" class="form-control"
+                                name="id" ngModel>
+
+                            <input type="hidden" class="form-control"
+                                name="id" estado>
+                        </div>
+
+                        <button type="submit" id="uploadUser" class="btn
+                            btn-success">Cargar
+                            usuario</button>
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <br>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th scope='col'>Nombre del equipo</th>
+                    <th scope='col'>Tipo de placa base</th>
+                    <th scope='col'>Modelo de la torre</th>
+                    <th scope='col'>caso</th>
+                    <th scope='col'>Marca del procesador</th>
+                    <th scope='col'>Marca de la trajeta gráfica</th>
+                    <th scope='col'>Tamaño total de ram</th>
+                    <th scope='col'>Modelo del disco duro</th>
+                    <th scope='col'>Tipo de teclado</th>
+                    <th scope='col'> Tipo de mouse</th>
+                    <th scope='col'>Tamaño total de la pantalla</th>
+                    <th scope='col'>Estado</th>
+                </tr>
+                <tr *ngFor="let caracteria of allCaracteristicas">
+                    <td>{{caracteria.gce_nombre_equipo}}</td>
+                    <td>{{caracteria.gce_board}} </td>
+                    <td>{{caracteria.gce_case}} </td>
+                    <td>{{caracteria.gce_procesador}} </td>
+                    <td>{{caracteria.gce_grafica}} </td>
+                    <td>{{caracteria.gce_ram}} </td>
+                    <td>{{caracteria.gce_disco_duro}} </td>
+                    <td>{{caracteria.gce_teclado}} </td>
+                    <td>{{caracteria.gce_mouse}} </td>
+                    <td>{{caracteria.gce_pantalla}} </td>
+                    <td>{{caracteria.gce_estado}} </td>
+                    <td> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Launch static backdrop modal
+                      </button></td>
+
+
+                      
+                    <td><button type="button" (click)="cabiarEstado(caracteria.gce_id)" class="btn btn-primary">Canbiar Estado</button>
+
+                    </td>
+
+
+                </tr>
+            </thead>
+
+        </table>
+
+    </body>
+
+</html>
